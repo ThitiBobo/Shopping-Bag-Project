@@ -1,11 +1,12 @@
 <?php
   namespace models;
+  include_once 'Model.php';
   include_once 'Commande.php';
   include_once 'Produit.php';
   /**
    *
    */
-  class CommandeProduit
+  class CommandeProduit extends Model
   {
 
     private $commande;

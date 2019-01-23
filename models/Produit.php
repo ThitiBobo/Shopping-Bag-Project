@@ -1,11 +1,11 @@
 <?php
   namespace models;
+  include_once 'Model.php';
   include_once 'Categorie.php';
-
   /**
    *
    */
-  class Produit
+  class Produit extends Model
   {
     private $id;
     private $nom;

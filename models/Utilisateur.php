@@ -1,10 +1,11 @@
 <?php
   namespace models;
-  include_once 'Adresse.php'
+  include_once 'Model.php';
+  include_once 'Adresse.php';
   /**
    *
    */
-  class Utilisateur
+  class Utilisateur extends Model
   {
     private $id;
     private $identifiant;

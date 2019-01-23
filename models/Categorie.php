@@ -1,9 +1,10 @@
 <?php
   namespace models;
+  include_once 'Model.php';
   /**
    *
    */
-  class Categorie
+  class Categorie extends Model
   {
     private $id;
     private $nom;
@@ -21,9 +22,13 @@
       return $this;
     }
 
-    function __construct(){
+    public function __construct(){
       $this->id = 0;
     }
-  }
 
+    public function hydrate($donnees){
+      $this->id = $donnees['id_categorie'];
+      $this->nom = $donnees['nom'];
+    }
+  }
 ?>

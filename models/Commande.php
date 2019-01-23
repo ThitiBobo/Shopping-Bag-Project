@@ -1,9 +1,10 @@
 <?php
   namespace models;
+  include_once 'Model.php';
   /**
    *
    */
-  class Commande
+  class Commande extends Model
   {
     private $id;
     private $date;
