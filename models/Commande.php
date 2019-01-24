@@ -1,6 +1,7 @@
 <?php
   namespace models;
   include_once 'Model.php';
+  include_once 'Utilisateur.php';
   /**
    *
    */

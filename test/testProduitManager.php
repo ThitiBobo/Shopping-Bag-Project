@@ -40,6 +40,6 @@
     print_r($liste);
 
     foreach ($liste as $var) {
-      $manager->delete($var);
+      //$manager->delete($var);
     }
  ?>
