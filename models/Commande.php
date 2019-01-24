@@ -7,11 +7,11 @@
   class Commande extends Model
   {
     private $id;
-    private $date;
-    private $status;
+    private $dateCommande;
+    private $statut;
     private $session;
     private $total;
-    private $typePaiment;
+    private $typePaiement;
     private $utilisateurEnregistre;
     private $utilisateur;
 
@@ -32,6 +32,16 @@
       $this->id = 0;
       $this->total = 0;
       $this->utilisateur = new Utilisateur();
+    }
+
+    public function hydrate($donnees){
+      $this->id = $donnees['id_commande'];
+      $this->dateCommande = $donnees['date_commande'];
+      $this->statut = $donnees['statut'];
+      $this->session = $donnees['session'];
+      $this->total = $donnees['total'];
+      $this->typePaiement = $donnees['type_paiement'];
+      $this->utilisateurEnregistre = $donnees['utilisateur_enregistre'];
     }
   }
 
