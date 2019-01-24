@@ -12,7 +12,7 @@
     private $session;
     private $total;
     private $typePaiment;
-    private $utilisateurEnregiste;
+    private $utilisateurEnregistre;
     private $utilisateur;
 
     public function __get($property) {

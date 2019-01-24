@@ -32,5 +32,13 @@
       $this->prix = 0;
       $this->categorie = new Categorie();
     }
+
+    public function hydrate($donnees){
+      $this->id = $donnees['id_produit'];
+      $this->nom = $donnees['nom'];
+      $this->description = $donnees['description'];
+      $this->image = $donnees['image'];
+      $this->prix = $donnees['prix'];
+    }
   }
  ?>
