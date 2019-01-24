@@ -134,12 +134,6 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 
 --
--- Contraintes pour la table `adresse`
---
-ALTER TABLE `adresse`
-  ADD CONSTRAINT `adresse_utilisateur_fk` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`);
-
---
 -- Contraintes pour la table `commande`
 --
 ALTER TABLE `commande`
