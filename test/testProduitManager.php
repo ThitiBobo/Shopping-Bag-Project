@@ -34,7 +34,9 @@
     echo("camarche");
     print_r($manager->get($obj->id));
 
+
     $liste = $manager->getList();
+
     print_r($liste);
 
     foreach ($liste as $var) {
