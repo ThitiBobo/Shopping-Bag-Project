@@ -15,15 +15,16 @@
     $categorie->id = "9";
 
     $obj = new CategorieManager(Bdd::getInstance());
-    //$obj->add($categorie);
+    $obj->add($categorie);
 
     //print_r($obj->get(14));
 
 
 
     $liste = $obj->getList();
+    print_r($liste);
     foreach ($liste as $var) {
-      $obj->delete($var);
+      //$obj->delete($var);
     }
 
 

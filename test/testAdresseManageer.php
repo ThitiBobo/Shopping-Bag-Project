@@ -19,13 +19,13 @@
     $manager = new AdresseManager(Bdd::getInstance());
 
     $manager->add($obj);
-    $manager->add($obj);
+    $manager->update($obj);
     print_r($manager->get($obj->id));
 
     $liste = $manager->getList();
     print_r($liste);
 
     foreach ($liste as $var) {
-      $manager->delete($var);
+      //$manager->delete($var);
     }
  ?>
