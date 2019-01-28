@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 23 jan. 2019 à 15:16
+-- Généré le :  lun. 28 jan. 2019 à 19:09
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -37,10 +37,15 @@ CREATE TABLE IF NOT EXISTS `adresse` (
   `complement_adresse` varchar(50) NOT NULL,
   `code_postal` int(11) NOT NULL,
   `ville` char(5) NOT NULL,
-  `id_utilisateur` int(11) NOT NULL,
-  PRIMARY KEY (`id_adresse`),
-  UNIQUE KEY `adresse_utilisateur_ak` (`id_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id_adresse`)
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `adresse`
+--
+
+INSERT INTO `adresse` (`id_adresse`, `adresse`, `complement_adresse`, `code_postal`, `ville`) VALUES
+(33, '65 rue du test', 'deuxième étage', 69008, 'Lyon');
 
 -- --------------------------------------------------------
 
@@ -53,7 +58,16 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   `id_categorie` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
   PRIMARY KEY (`id_categorie`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `categorie`
+--
+
+INSERT INTO `categorie` (`id_categorie`, `nom`) VALUES
+(1, 'thé'),
+(2, 'café'),
+(3, 'fruit sec');
 
 -- --------------------------------------------------------
 
@@ -73,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `commande` (
   `id_utilisateur` int(11) NOT NULL,
   PRIMARY KEY (`id_commande`),
   KEY `commande_utilisateur_fk` (`id_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -106,7 +120,14 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `id_categorie` int(11) NOT NULL,
   PRIMARY KEY (`id_produit`),
   KEY `produit_categorie_fk` (`id_categorie`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `produit`
+--
+
+INSERT INTO `produit` (`id_produit`, `nom`, `description`, `prix`, `image`, `id_categorie`) VALUES
+(23, 'produit n°23', 'un produit ', 39.4, 'dsfghj', 1);
 
 -- --------------------------------------------------------
 
@@ -126,8 +147,8 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `admin` varchar(1) NOT NULL,
   `id_adresse` int(11) NOT NULL,
   PRIMARY KEY (`id_utilisateur`),
-  UNIQUE KEY `utilisateur_adresse_ak` (`id_adresse`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `utilisateur_adresse_fk` (`id_adresse`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 --
 -- Contraintes pour les tables déchargées
