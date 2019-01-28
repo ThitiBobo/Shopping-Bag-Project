@@ -4,8 +4,8 @@
   use models\Categorie;
   use persistent\Bdd;
   use PDO;
-  include_once('../persistent/Bdd.php');
-  include_once('../models/Categorie.php');
+  include_once('persistent\Bdd.php');
+  include_once('models\Categorie.php');
   include_once('DAOBase.php');
   /**
    *

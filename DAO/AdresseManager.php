@@ -70,7 +70,7 @@
       $q->bindValue(':codePostal', $obj->codePostal, PDO::PARAM_STR);
       $q->bindValue(':ville', $obj->ville, PDO::PARAM_STR);
       $q->bindValue(':id', $obj->id, PDO::PARAM_INT);
-      
+
       $this->db->execution($q);
     }
   }
